@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "opencv-python-sample"
+version = "0.1.0"
+description = ""
+authors = ["liyan <twotwo.li@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.7.5"
+opencv-python = "^4.7.0.68"
+jupyter = "^1.0.0"
+matplotlib = "~3.5.3"
+
+[[tool.poetry.source]]
+name = "infervision"
+url = "https://mirrors.aliyun.com/pypi/simple"
+default = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
