@@ -17,7 +17,7 @@ def draw_rgb_lines(img, title=["Blue", "Green", "Red"]):
     plt.legend(title, loc="upper right")
     plt.show()
 
-def subplot(rows, columns, images, titles):
+def subplot(rows, columns, images, titles, scale:int = 2, axis_off:bool=True):
     """画出多张图像的函数
     Parameters
     ----------
@@ -25,16 +25,19 @@ def subplot(rows, columns, images, titles):
     images: 图像数组
         图像总数不要超过 rows * columns
     titles: 图像标题数组
+    scale: 放大系数
+    axis_off: 不显示坐标
+
     Returns
     -------
     """
-    N = 2
     # create figure size: width * height
-    fig = plt.figure(figsize=(columns * N, rows * N))
+    fig = plt.figure(figsize=(columns * scale, rows * scale))
     for i, img in enumerate(images):
         # Adds a subplot at i+1 position
         fig.add_subplot(rows, columns, i+1)
         # showing image
         plt.imshow(img)
-        plt.axis("off")
+        if axis_off:
+            plt.axis("off")
         plt.title(titles[i])
